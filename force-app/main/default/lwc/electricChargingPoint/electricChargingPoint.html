@@ -1,0 +1,41 @@
+<template>
+    <lightning-card title="Electric Charging Point">
+        <template if:false={recordPage}>
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_8-of-12 slds-var-m-around_small">
+                    <lightning-input type="text" label="Address Line 1" name="add" onchange={handleInputChange} required></lightning-input>
+                </div>
+                <div class="slds-col slds-size_3-of-12 slds-var-m-around_small">
+                    <lightning-input type="text" label="City" name="city" onchange={handleInputChange} required></lightning-input>
+                </div>
+            </div>
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_3-of-12 slds-var-m-left_small">
+                    <lightning-input type="text" label="State" name="state" onchange={handleInputChange} required></lightning-input>
+                </div>
+                <div class="slds-col slds-size_3-of-12 slds-var-m-left_small">
+                    <lightning-input type="text" label="Country" name="country" onchange={handleInputChange} required></lightning-input>
+                </div>
+                <div class="slds-col slds-size_3-of-12 slds-var-m-left_small">
+                    <lightning-input type="number" label="Postal Code" name="postcode" onchange={handleInputChange} required></lightning-input>
+                </div>
+                <div class="slds-col slds-size_1-of-12 slds-var-m-left_xx-large slds-var-m-top_large">
+                    <lightning-button variant="brand" label="Search" title="Search Electric Charging Point" onclick={handleClick}></lightning-button>
+                </div>
+            </div>
+        </template>
+        <div class="slds-var-m-around_large">
+            <template if:true={hasData}>
+                <lightning-map map-markers={mapMarkers}></lightning-map>
+            </template>
+            <template if:false={hasData}>
+                <template if:true={loader}>
+                    <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+                </template>
+                <template if:true={showMessage}>
+                    <p>No Charging Station Found</p>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>

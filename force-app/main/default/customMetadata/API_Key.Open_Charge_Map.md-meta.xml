@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Open Charge Map</label>
+    <protected>false</protected>
+    <values>
+        <field>Key__c</field>
+        <value xsi:type="xsd:string">8867b125-bb7d-46b5-8c9c-67cd37e6156c</value>
+    </values>
+</CustomMetadata>
